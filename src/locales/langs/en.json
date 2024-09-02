@@ -1,0 +1,43 @@
+{
+    "Lar": "Home",
+    "Contato": "Contact",
+    "horários": "Schedule",
+    "Conhecer mais": "know more",
+  
+    "SUNDAY": "SUNDAY",
+    "MONDAY": "MONDAY",
+    "TUESDAY": "TUESDAY",
+    "WEDNESDAY": "WEDNESDAY",
+    "THURSDAY": "THURSDAY",
+    "FRIDAY": "FRIDAY",
+    "SATURDAY": "SATURDAY",
+    "We're sorry, there are no more classes today": "We're sorry, there are no more classes today",
+    "Sua mensagem": "Your message",
+    "Qual é o seu nome?": "What is your name?",
+    "enviando...": "sending...",
+    "Enviar": "To send",
+    "Experimente aula grátis": "Try Free Class",
+  
+    "Desenvolvido por": "Powered by",
+  
+    "equipe": "Team",
+  
+    "Entre em contato conosco": "Get in touch with us",
+    "Nome": "Name",
+    "E-mail": "Email",
+    "Telefone": "Phone",
+    "Mensagem": "Message",
+    "Enviar": "Send",
+  
+    "Name": "Name",
+  
+    "TRAINER": "TRAINER",
+   
+    "Agendar aula experimental": "schedule trial class",
+    "Você receberá um e-mail de confirmação em breve.": "You will receive a confirmation mail shortly.",
+    "Por favor, preencha corretamente.": "Please fill in correctly.",
+    "Aula Experimental": "Experimental class",
+    "demo": {
+      "title": "English"
+    }
+  }

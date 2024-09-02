@@ -1,0 +1,44 @@
+/* .css-j7qwjs,
+
+/*
+ * Form - CSS
+ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: rgba(27, 27, 27, 1) !important;
+}
+
+ .PhoneInputInput:focus-visible{
+  outline: none !important;
+}
+
+.PhoneInput--focus .PhoneInputInput{
+    background-color: #fff !important;
+    color: #000000 !important;
+    font-weight: 400 !important;
+    outline: none;
+}
+
+.PhoneInput > input {
+  border: none;
+}
+
+.PhoneInput > input::placeholder {
+ color: #B4B4B4;
+ font-weight: 400;
+font-size: 16px;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: #000000 !important;
+}
+
+input:-webkit-autofill:hover{
+  -webkit-text-fill-color: #000000 !important;
+}
