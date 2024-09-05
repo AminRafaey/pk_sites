@@ -1,6 +1,7 @@
 import Airtable, { FieldSet, Table } from 'airtable';
+import { AIRTABLE_API_KEY } from 'src/utils/env-config';
 
-export const apiKey = process.env.AIRTABLE_API_KEY;
+export const apiKey = AIRTABLE_API_KEY;
 // Authenticate
 Airtable.configure({
   apiKey,
