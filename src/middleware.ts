@@ -30,17 +30,17 @@ export default async function middleware(req: NextRequest) {
   const path = url?.pathname || '';
   let hostData = hostname;
  
-  if (req.headers.get('host') === "localhost:8084" || req.headers.get('host') === "www.dojoplus.site") {
+  if (req.headers.get('host') === "localhost:8084" || req.headers.get('host') === "www.pk-sites.vercel.app") {
     return NextResponse.rewrite(new URL(`/`, req.url));
   }
 
-  if (!hostname.includes('dojoplus.site') && hostData.startsWith('www.')) {
+  if (!hostname.includes('pk-sites.vercel.app') && hostData.startsWith('www.')) {
     hostData = hostData.replace('www.', '');
     const schoolDomainHostName: any = await appFetch(
       `${API_ROUTES.getMainDomainHostName}/${hostData}`
     );
     return NextResponse.rewrite(
-      new URL(`/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.dojoplus.site${path}`, req.url)
+      new URL(`/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.pk-sites.vercel.app${path}`, req.url)
     );
   }
 

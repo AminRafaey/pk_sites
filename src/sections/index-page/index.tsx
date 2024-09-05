@@ -10,7 +10,7 @@ const IndexHomePage = ({ domainsData }: { domainsData: any }) => (
               cursor: 'pointer',
             }}
           >
-            <a href={`https://${domain?.domain}.dojoplus.site/`} style={{ color: 'blue' }}>
+            <a href={`https://${domain?.domain}.pk-sites.vercel.app/`} style={{ color: 'blue' }}>
               {domain.schoolName?.[0]}
             </a>
           </li>

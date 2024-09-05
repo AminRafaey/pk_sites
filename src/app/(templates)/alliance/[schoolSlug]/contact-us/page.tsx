@@ -69,7 +69,7 @@ const ContactUsPage: NextPage<SchoolDetailProps> = async (props) => {
     organizer: {
       '@type': 'Organization',
       name: `${schoolData?.schoolName}`,
-      url: `https://${schoolData?.domainFromDomains?.[0]}.dojoplus.site/contact-us`,
+      url: `https://${schoolData?.domainFromDomains?.[0]}.pk-sites.vercel.app/contact-us`,
     },
   };
   return (

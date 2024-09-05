@@ -1,9 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://dojoplus.site',
+  siteUrl: 'https://pk-sites.vercel.app',
   generateRobotsTxt: true,
   exclude: ['/sitemap.xml'],
   robotsTxtOptions: {
-    additionalSitemaps: ['https://dojoplus.site/sitemap.xml'],
+    additionalSitemaps: ['https://pk-sites.vercel.app/sitemap.xml'],
   },
 };

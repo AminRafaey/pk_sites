@@ -78,7 +78,7 @@ const HomePage: NextPage<SchoolDetailProps> = async (props) => {
     organizer: {
       '@type': 'Organization',
       name: `${schoolData?.schoolName}`,
-      url: `https://${schoolData?.domainFromDomains?.[0]}.dojoplus.site/school`,
+      url: `https://${schoolData?.domainFromDomains?.[0]}.pk-sites.vercel.app/school`,
     },
   };
   return (
