@@ -1,8 +1,7 @@
-import { NEXT_PUBLIC_ROOT_DOMAIN } from "./env-config";
 
 export function formatDomain(schoolSlug: string) {
   const localHostSuffix = '.localhost:8084';
-  const rootDomainSuffix = `.${NEXT_PUBLIC_ROOT_DOMAIN}`;
+  const rootDomainSuffix = `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`;
   let subdomain;
 
   if (schoolSlug.includes(localHostSuffix)) {

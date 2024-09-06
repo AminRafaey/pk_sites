@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { appFetch } from './utils/fetch';
 import { API_ROUTES } from './utils/api-routes';
-import { NEXT_PUBLIC_ROOT_DOMAIN } from './utils/env-config';
 
 export const config = {
   matcher: [
@@ -22,7 +21,7 @@ export default async function middleware(req: NextRequest) {
   // Get hostname of request (e.g. demo.vercel.pub, demo.localhost:3000)
   const hostname = req.headers
     .get('host')!
-    .replace('.localhost:8084', `.${NEXT_PUBLIC_ROOT_DOMAIN}`);
+    .replace('.localhost:8084', `.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`);
 
 
   // rewrites for single domains
@@ -52,20 +51,20 @@ export default async function middleware(req: NextRequest) {
 
   const requestedDomain = req.headers
     .get('host')!
-    .replace(`.${NEXT_PUBLIC_ROOT_DOMAIN}`, '');
+    .replace(`.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`, '');
 
   const schoolDomain: any = await appFetch(
     `${API_ROUTES.getSingleSchoolDomain}/${requestedDomain}`
   );
 
   // rewrites for admin pages
-  if (hostname === `admin.${NEXT_PUBLIC_ROOT_DOMAIN}`) {
+  if (hostname === `admin.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`) {
     return NextResponse.rewrite(new URL(`/admin${path === '/' ? '' : path}`, req.url));
   }
 
   // for latter use
   // rewrite root application to `/home` folder
-  // if (hostname === 'localhost:8084' || hostname === NEXT_PUBLIC_ROOT_DOMAIN) {
+  // if (hostname === 'localhost:8084' || hostname === process.env.NEXT_PUBLIC_ROOT_DOMAIN) {
   //   return NextResponse.rewrite(new URL(`/home${path}`, req.url));
   // }
 

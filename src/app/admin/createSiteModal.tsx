@@ -7,7 +7,6 @@
 // import va from "@vercel/analytics";
 import { useEffect, useState } from 'react';
 import { addDomainToVercel } from 'src/utils/domains';
-import { NEXT_PUBLIC_ROOT_DOMAIN } from 'src/utils/env-config';
 // import { CircularProgress } from '@mui/material';
 // import { createSite } from "@/lib/actions";
 // import { cn } from "@/lib/utils";
@@ -97,7 +96,7 @@ export default function CreateSiteModal() {
               className="w-full rounded-l-lg border border-stone-200 bg-stone-50 px-4 py-2 text-sm text-stone-600 placeholder:text-stone-400 focus:border-black focus:outline-none focus:ring-black dark:border-stone-600 dark:bg-black dark:text-white dark:placeholder-stone-700 dark:focus:ring-white"
             />
             <div className="flex items-center rounded-r-lg border border-l-0 border-stone-200 bg-stone-100 px-3 text-sm dark:border-stone-600 dark:bg-stone-800 dark:text-stone-400">
-              .{NEXT_PUBLIC_ROOT_DOMAIN}
+              .{process.env.NEXT_PUBLIC_ROOT_DOMAIN}
             </div>
           </div>
         </div>
