@@ -16,7 +16,12 @@ class SubdomainsServices {
 
   async getAllSubDomains() {
     try {
-      const records = await table.select().all();
+      const records = await table
+        .select({
+          // change this after successfull testing
+          maxRecords: 500,
+        })
+        .all();
       const formattedResponseData = formattedResponse([...records]);
       return formattedResponseData;
     } catch (error) {
