@@ -31,7 +31,7 @@ export default async function middleware(req: NextRequest) {
   const path = url?.pathname || '';
   let hostData = hostname;
  
-  if (req.headers.get('host') === "localhost:8084" || req.headers.get('host') === "www.vintagetoons") {
+  if (req.headers.get('host') === "localhost:8084" || req.headers.get('host') === "www.vintagetoons.com") {
     return NextResponse.rewrite(new URL(`/`, req.url));
   }
 
@@ -41,18 +41,18 @@ export default async function middleware(req: NextRequest) {
       `${API_ROUTES.getMainDomainHostName}/${hostData}`
     );
     return NextResponse.rewrite(
-      new URL(`/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.vintagetoons${path}`, req.url)
+      new URL(`/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.vintagetoons.com${path}`, req.url)
     );
   }
 
 
-  const requestedDomain = req.headers
-    .get('host')!
-    .replace('.localhost:8084', '');
-
   // const requestedDomain = req.headers
   //   .get('host')!
-  //   .replace(`.${NEXT_PUBLIC_ROOT_DOMAIN}`, '');
+  //   .replace('.localhost:8084', '');
+
+  const requestedDomain = req.headers
+    .get('host')!
+    .replace(`.${NEXT_PUBLIC_ROOT_DOMAIN}`, '');
 
   const schoolDomain: any = await appFetch(
     `${API_ROUTES.getSingleSchoolDomain}/${requestedDomain}`
@@ -70,6 +70,6 @@ export default async function middleware(req: NextRequest) {
   // }
 
   // rewrite everything else to `/[domain]/[path] dynamic route
-  // return NextResponse.rewrite(new URL(`/${schoolDomain?.templateId}/${hostname}${path}`, req.url));  //before use
-  return NextResponse.rewrite(new URL(`/alliance/vintagetoons/`, req.url));
+  return NextResponse.rewrite(new URL(`/${schoolDomain?.templateId}/${hostname}${path}`, req.url)); 
+  // return NextResponse.rewrite(new URL(`/alliance/vintagetoons/`, req.url));   //before use
 }

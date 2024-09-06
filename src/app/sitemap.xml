@@ -11,7 +11,7 @@ export default async function Sitemap() {
   const suffixes = ['/', '/home', '/school', '/schedule', '/contact-us'];
 
   const fields = domains.flatMap(({ domain }: any) =>
-    suffixes.map((suffix) => createSitemapField(`https://${domain}.vintagetoons${suffix}`))
+    suffixes.map((suffix) => createSitemapField(`https://${domain}.vintagetoons.com${suffix}`))
   );
-  return [createSitemapField(`https:/vintagetoons`), ...fields];
+  return [createSitemapField(`https:/vintagetoons.com`), ...fields];
 }
