@@ -19,7 +19,7 @@ class SubdomainsServices {
       const records = await table
         .select({
           // change this after successfull testing
-          maxRecords: 500,
+          // maxRecords: 500,
         })
         .all();
       const formattedResponseData = formattedResponse([...records]);
