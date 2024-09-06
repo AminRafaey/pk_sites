@@ -44,7 +44,7 @@ const HomePage: NextPage<SchoolDetailProps> = async (props, req) => {
     headline: `${translatedDetailPageRecordData?.schoolSlogan}`,
     description: `${translatedDetailPageRecordData?.schoolSloganDescription}`,
     image: `${translatedDetailPageRecordData?.schoolHallImage}`,
-    url: `https://${schoolData?.domainFromDomains?.[0]}.pk-sites.vercel.app/home`,
+    url: `https://${schoolData?.domainFromDomains?.[0]}.vintagetoons/home`,
     telephone: `${schoolData?.phone}`,
     address: {
       '@type': 'PostalAddress',

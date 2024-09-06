@@ -96,7 +96,7 @@ const HomePage: NextPage<SchedulesDetailProps> = async (props) => {
     organizer: {
       '@type': 'Organization',
       name: `${schoolData?.schoolName}`,
-      url: `https://${schoolData?.domainFromDomains?.[0]}.pk-sites.vercel.app/school`,
+      url: `https://${schoolData?.domainFromDomains?.[0]}.vintagetoons/school`,
     },
   };
   return (

@@ -31,17 +31,17 @@ export default async function middleware(req: NextRequest) {
   const path = url?.pathname || '';
   let hostData = hostname;
  
-  if (req.headers.get('host') === "localhost:8084" || req.headers.get('host') === "www.pk-sites.vercel.app") {
+  if (req.headers.get('host') === "localhost:8084" || req.headers.get('host') === "www.vintagetoons") {
     return NextResponse.rewrite(new URL(`/`, req.url));
   }
 
-  if (!hostname.includes('pk-sites.vercel.app') && hostData.startsWith('www.')) {
+  if (!hostname.includes('vintagetoons') && hostData.startsWith('www.')) {
     hostData = hostData.replace('www.', '');
     const schoolDomainHostName: any = await appFetch(
       `${API_ROUTES.getMainDomainHostName}/${hostData}`
     );
     return NextResponse.rewrite(
-      new URL(`/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.pk-sites.vercel.app${path}`, req.url)
+      new URL(`/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.vintagetoons${path}`, req.url)
     );
   }
 

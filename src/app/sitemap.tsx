@@ -11,7 +11,7 @@ export default async function Sitemap() {
   const suffixes = ['/', '/home', '/school', '/schedule', '/contact-us'];
 
   const fields = domains.flatMap(({ domain }: any) =>
-    suffixes.map((suffix) => createSitemapField(`https://${domain}.pk-sites.vercel.app${suffix}`))
+    suffixes.map((suffix) => createSitemapField(`https://${domain}.vintagetoons${suffix}`))
   );
-  return [createSitemapField(`https:/pk-sites.vercel.app`), ...fields];
+  return [createSitemapField(`https:/vintagetoons`), ...fields];
 }

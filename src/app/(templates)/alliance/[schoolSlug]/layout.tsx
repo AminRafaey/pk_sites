@@ -58,7 +58,9 @@ export const getAllTranslatedDataFromDB = async () => {
 
   try {
     // change fetch api with params in AppFetch
-    const responseData = await appFetchParams(`${BASE_URL}${API_ROUTES.getSiteTranslation}?${params}`);
+    const responseData = await appFetchParams(
+      `${BASE_URL}${API_ROUTES.getSiteTranslation}?${params}`
+    );
     return responseData;
   } catch (error) {
     console.error('There was a problem with the fetch operation:', error);

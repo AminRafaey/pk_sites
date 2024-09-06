@@ -66,7 +66,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ schoolData, schoolDetail }) => {
       'Additional Information': data.message,
       Country: selectedCountry,
       School: schoolData?.slug,
-      Source: 'pk-sites.vercel.app',
+      Source: 'vintagetoons',
     };
     try {
       setSending(true);

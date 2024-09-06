@@ -1,7 +1,7 @@
 export const CLOUDINARY_CLOUD_NAME = 'dvjojhstn';
 export const CLOUDINARY_CLOUD_UNSIGNED_PRESET = 'Dojoplus';
-// export const BASE_URL = 'https://pk-sites.vercel.app';
-export const BASE_URL = 'https://pk-sites.vercel.app';
+// export const BASE_URL = 'https://vintagetoons';
+export const BASE_URL = 'https://vintagetoons';
 // export const BASE_URL = 'http://localhost:8084'; // for later use
 
 const durations = [
