@@ -69,5 +69,6 @@ export default async function middleware(req: NextRequest) {
   // }
 
   // rewrite everything else to `/[domain]/[path] dynamic route
-  return NextResponse.rewrite(new URL(`/alliance/myself.vintagetoons.com/`, req.url));
+  // return NextResponse.rewrite(new URL(`/alliance/myself.vintagetoons.com/`, req.url));
+  return NextResponse.rewrite(new URL(`/${schoolDomain?.templateId}/${hostname}${path}`, req.url));
 }
