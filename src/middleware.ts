@@ -34,7 +34,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.rewrite(new URL(`/`, req.url));
   }
 
-  if (!hostname.includes('vintagetoons') && hostData.startsWith('www.')) {
+  if (!hostname.includes('vintagetoons.com') && hostData.startsWith('www.')) {
     hostData = hostData.replace('www.', '');
     const schoolDomainHostName: any = await appFetch(
       `${API_ROUTES.getMainDomainHostName}/${hostData}`
