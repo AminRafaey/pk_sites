@@ -40,7 +40,12 @@ export default async function middleware(req: NextRequest) {
     const schoolDomainHostName: any = await appFetch(
       `${API_ROUTES.getMainDomainHostName}/${hostData}`
     );
-    return NextResponse.rewrite(new URL(`/alliance/myself.vintagetoons.com/`, req.url));
+    return NextResponse.rewrite(
+      new URL(
+        `/${schoolDomainHostName?.templateId}/${schoolDomainHostName?.domain}.vintagetoons.com${path}`,
+        req.url
+      )
+    );
   }
 
   // const requestedDomain = req.headers.get('host')!.replace('.localhost:8084', '');
