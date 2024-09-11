@@ -80,7 +80,7 @@ const TrainerPage: React.FC<TrainerProps> = ({ selectedSchool, schoolDetail, ins
                         <ImageWrapper>
                           <TrainerImage
                             itemProp={MICRO_DATA.IMAGE}
-                            src={data?.instructorDetail.photo?.[0]?.url || DefaultAvatar}
+                            src={data?.instructorDetail?.photo?.[0]?.url || DefaultAvatar}
                           />
                         </ImageWrapper>
                         <TrainerName itemProp={MICRO_DATA.NAME}>
