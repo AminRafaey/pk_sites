@@ -1,4 +1,4 @@
-import { Barlow,Poppins } from 'next/font/google';
+import { Barlow, Poppins, Saira } from 'next/font/google';
 
 // ----------------------------------------------------------------------
 
@@ -31,14 +31,14 @@ declare module '@mui/material/styles' {
 }
 
 export const primaryFont = Poppins({
-  weight: ['100', '200', "300", '400', '500', '600', '700', '800', '900'],
+  weight: ['100', '200', '300', '400', '500', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['sans-serif'],
 });
 
-export const secondaryFont = Barlow({
-  weight: ['900'],
+export const secondaryFont = Saira({
+  weight: ['100', '200', '300', '400', '500', '700', '800', '900'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
