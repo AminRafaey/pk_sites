@@ -5,17 +5,18 @@ import { styled, useTheme } from '@mui/system';
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { secondaryFont } from 'src/theme/typography';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const DojoPlusIcon = styled('svg')({});
 
 const FloatingWrapper = styled('div')(({ theme }) => ({
   textTransform: 'uppercase',
   // backgroundColor: theme.palette.primary.main,
-  backgroundColor: '#282828',
-  boxShadow: `0px 16px 28.8px -4.5px #00000008, 
-              0px 5.1px 9.19px -3.38px #00000031, 
-              0px 1.93px 3.48px -2.25px #0000003D, 
-              0px 0.64px 1.15px -1.13px #00000042`,
+  // backgroundColor: '#282828',
+  // boxShadow: `0px 16px 28.8px -4.5px #00000008,
+  //             0px 5.1px 9.19px -3.38px #00000031,
+  //             0px 1.93px 3.48px -2.25px #0000003D,
+  //             0px 0.64px 1.15px -1.13px #00000042`,
   // color: theme.palette.primary.darker,
   color: '#FCFCFC',
   // backgroundColor: theme.palette.primary.main,
@@ -35,10 +36,11 @@ const FloatingWrapper = styled('div')(({ theme }) => ({
 
 const FloatingQuotation = ({
   children,
-  schoolDetail,
+  
+  phoneNumber,
 }: {
   children: ReactNode;
-  schoolDetail: any;
+  phoneNumber: any;
 }) => {
   const theme = useTheme();
   const { t } = useTranslation();
@@ -47,7 +49,26 @@ const FloatingQuotation = ({
     <>
       {children}
       <FloatingWrapper theme={theme}>
-        <Typography
+        <a
+          style={{
+            textDecoration: 'none',
+            color: `${theme.palette.primary.contrastText}`,
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://api.whatsapp.com/send?phone=${phoneNumber}`}
+        >
+          <WhatsAppIcon
+            style={{
+              width: '60px',
+              height: '60px',
+              color: '#10BA18',
+              cursor: 'pointer',
+            }}
+          />
+        </a>
+        {/* for latter use  */}
+        {/* <Typography
           sx={{
             fontFamily: secondaryFont.style.fontFamily,
             fontSize: '13px',
@@ -68,7 +89,7 @@ const FloatingQuotation = ({
             fill="#FCFCFC"
             // fill={theme.palette.primary.darker}
           />
-        </DojoPlusIcon>{' '}
+        </DojoPlusIcon>{' '} */}
       </FloatingWrapper>
     </>
   );

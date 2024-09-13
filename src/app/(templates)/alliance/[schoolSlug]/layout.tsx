@@ -226,7 +226,7 @@ async function TemplateLayout(props: TemplateLayoutProps) {
             schoolDetail={translatedDetailPageRecordData}
           />
           <ProgressBar />
-          <FloatingQuotation schoolDetail={translatedDetailPageRecordData}>
+          <FloatingQuotation phoneNumber={phoneNumber}>
             {props?.children}
           </FloatingQuotation>
           <DojoSiteFooter
